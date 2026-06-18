@@ -1,0 +1,139 @@
+.ps-application-card {
+  overflow: hidden;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(26, 58, 92, 0.06);
+}
+
+.ps-application-card-header {
+  padding: 0.75rem 1rem;
+  color: #1a3a5c;
+  background: #f7fafc;
+  border-bottom: 1px solid #dbe5ef;
+  box-shadow: inset 4px 0 0 #1a3a5c;
+}
+
+.ps-application-card-header h5 {
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.ps-application-card .card-body {
+  padding: 1rem;
+}
+
+.ps-application-section-alert {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.ps-application-section-alert ul {
+  padding-left: 1.1rem;
+}
+
+.ps-application-card .row {
+  --bs-gutter-x: 0.85rem;
+}
+
+.ps-application-card .form-label {
+  color: #1f2933;
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.ps-application-card .form-control,
+.ps-application-card .form-select {
+  min-height: 40px;
+  border-color: #ced8e3;
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+.ps-application-card .form-control:focus,
+.ps-application-card .form-select:focus {
+  border-color: #1a3a5c;
+  box-shadow: 0 0 0 0.2rem rgba(26, 58, 92, 0.14);
+}
+
+.ps-application-type-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.ps-application-type-options .form-check {
+  margin: 0;
+  padding: 0.65rem 0.75rem 0.65rem 2.25rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #fbfdff;
+  font-size: 0.9rem;
+}
+
+.ps-application-type-options .form-check-input {
+  margin-left: -1.45rem;
+}
+
+.ps-file-upload {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  background: #f8fafc;
+  border-color: #dbe5ef !important;
+  border-radius: 8px !important;
+}
+
+.ps-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ps-file-upload-trigger {
+  flex: 0 0 auto;
+}
+
+.ps-file-upload-name {
+  min-width: 0;
+  flex: 1 1 14rem;
+  color: var(--ps-text-light);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.ps-file-upload-name.has-file {
+  color: #198754;
+  font-weight: 600;
+}
+
+.ps-file-upload-invalid {
+  border-color: var(--bs-danger) !important;
+}
+
+@media (max-width: 575.98px) {
+  .ps-file-upload {
+    align-items: stretch;
+  }
+
+  .ps-application-type-options {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-file-upload-trigger {
+    width: 100%;
+  }
+
+  .ps-file-upload-name {
+    flex-basis: 100%;
+  }
+}

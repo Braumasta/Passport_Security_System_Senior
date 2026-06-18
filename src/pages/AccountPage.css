@@ -1,0 +1,193 @@
+.ps-account-page {
+  background-color: var(--ps-light);
+}
+
+.ps-account-title {
+  color: var(--ps-primary);
+}
+
+.ps-account-callout {
+  border: 1px solid rgba(13, 110, 253, 0.25);
+}
+
+.ps-account-callout-primary {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.ps-account-callout-warning {
+  background-color: #ffffff;
+  border-left: 4px solid var(--ps-primary);
+  border-color: rgba(26, 58, 92, 0.16);
+  box-shadow: 0 0.35rem 1rem rgba(26, 58, 92, 0.07);
+}
+
+.ps-account-photo-panel {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem;
+  border: 1px solid var(--ps-border);
+  border-radius: 0.75rem;
+  background: #f8fafc;
+}
+
+.ps-account-photo-preview {
+  width: 160px;
+  height: 160px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #dbe5f0;
+  border: 1px solid rgba(26, 58, 92, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-account-photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ps-account-photo-preview-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.ps-account-photo-preview-button:focus-visible {
+  outline: 3px solid rgba(26, 58, 92, 0.35);
+  outline-offset: -3px;
+}
+
+.ps-account-photo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ps-primary);
+  background: linear-gradient(135deg, rgba(26, 58, 92, 0.12), rgba(26, 58, 92, 0.04));
+}
+
+.ps-account-photo-content {
+  min-width: 0;
+}
+
+.ps-account-security-panel {
+  padding: 1.25rem;
+  border: 1px solid var(--ps-border);
+  border-radius: 0.75rem;
+  background: #f8fafc;
+}
+
+.ps-account-verification-code {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 0.65rem 0.85rem;
+}
+
+.ps-account-verification-code span {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ps-account-verification-code strong {
+  color: #1a3a5c;
+}
+
+.ps-account-edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.ps-account-edit-table .form-control,
+.ps-account-edit-table .form-select {
+  max-width: 520px;
+}
+
+.ps-account-table th {
+  width: 32%;
+  background-color: #f8fafc;
+  color: var(--ps-primary);
+  font-weight: 600;
+}
+
+.ps-account-table td,
+.ps-account-table th {
+  padding: 0.9rem 1rem;
+}
+
+.ps-account-photo-modal .modal-content {
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ps-account-photo-modal .modal-body {
+  display: flex;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background: #eef3f8;
+  padding: 1rem;
+}
+
+.ps-account-photo-modal-image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .ps-account-photo-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-account-photo-preview {
+    width: min(180px, 100%);
+    height: min(180px, 100vw - 4rem);
+  }
+
+  .ps-account-table th,
+  .ps-account-table td {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ps-account-callout .btn {
+    width: 100%;
+  }
+
+  .ps-account-security-panel .btn {
+    width: 100%;
+  }
+
+  .ps-account-edit-actions {
+    flex-direction: column;
+  }
+
+  .ps-account-edit-table .form-control,
+  .ps-account-edit-table .form-select {
+    max-width: none;
+  }
+}

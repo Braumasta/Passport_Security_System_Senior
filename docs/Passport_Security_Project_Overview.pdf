@@ -1,0 +1,1067 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 3142 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(PASSPORT SECURITY INFORMATION SYSTEM - PROJECT OVERVIEW) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(1. PURPOSE) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Passport Security is a full-stack information system for online passport services. The) Tj
+0 -13 Td
+(application supports applicant registration, email verification, account identity verification,) Tj
+0 -13 Td
+(passport application submission, staff review, passport issuance, and admin management. The) Tj
+0 -13 Td
+(system is designed as a controlled workflow where an applicant cannot submit a passport) Tj
+0 -13 Td
+(application until their account has been verified.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(2. HIGH-LEVEL ARCHITECTURE) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The project is divided into four main layers:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(1. **React frontend** for the user interface.) Tj
+0 -13 Td
+(2. **Express backend** for API routes, authentication, validation, business rules, and database) Tj
+0 -13 Td
+(access.) Tj
+0 -13 Td
+(3. **Supabase PostgreSQL and Storage** for persistent data and uploaded files.) Tj
+0 -13 Td
+(4. **Python OCR/AI services** for account document extraction and passport document extraction.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The frontend communicates with the backend through `/api` endpoints. The backend stores) Tj
+0 -13 Td
+(relational data in PostgreSQL and stores uploaded images/documents in Supabase Storage. Python) Tj
+0 -13 Td
+(scripts are called by the Node backend when account verification or passport OCR review needs to) Tj
+0 -13 Td
+(run.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(3. FRONTEND TECHNOLOGIES) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - **React 18:** Main UI framework.) Tj
+0 -13 Td
+(  - **Vite 5:** Development server and production build tool.) Tj
+0 -13 Td
+(  - **React Router v6:** Client-side routing.) Tj
+0 -13 Td
+(  - **React Bootstrap and Bootstrap 5:** Layout, forms, navigation, cards, tables, modals, and) Tj
+0 -13 Td
+(    alerts.) Tj
+0 -13 Td
+(  - **CSS modules/files:** Page-specific styling for Header, Footer, Account, Operations,) Tj
+0 -13 Td
+(    Management, Registration, Home, Information pages, and passport application form.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Important frontend files:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `src/App.jsx`: Defines application routes and access guards.) Tj
+0 -13 Td
+(  - `src/components/Header.jsx`: Main navigation, account dropdown, role-based links.) Tj
+0 -13 Td
+(  - `src/components/Footer.jsx`: Footer links and layout.) Tj
+0 -13 Td
+(  - `src/components/PassportApplicationForm.jsx`: Passport application form and document upload) Tj
+0 -13 Td
+(    flow.) Tj
+0 -13 Td
+(  - `src/pages/AccountPage.jsx`: My Account, profile photo, account verification upload, saved) Tj
+0 -13 Td
+(    account details, password change.) Tj
+0 -13 Td
+(  - `src/pages/OperationsPage.jsx`: Staff review dashboard for account verification and passport) Tj
+0 -13 Td
+(    applications.) Tj
+0 -13 Td
+(  - `src/pages/ManagementPage.jsx`: Admin staff management and member lookup.) Tj
+0 -13 Td
+(  - `src/pages/RegisterPage.jsx`: Applicant registration.) Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 1 of 9) Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Length 3072 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(  - `src/data/lebaneseVillages.js`: Shared place-of-birth dropdown list.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(4. BACKEND TECHNOLOGIES) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - **Node.js with Express:** API server and route handling.) Tj
+0 -13 Td
+(  - **PostgreSQL through `pg`:** Database queries.) Tj
+0 -13 Td
+(  - **JWT:** Authentication tokens.) Tj
+0 -13 Td
+(  - **bcryptjs:** Password hashing.) Tj
+0 -13 Td
+(  - **Multer:** File upload parsing.) Tj
+0 -13 Td
+(  - **Nodemailer:** Transactional emails.) Tj
+0 -13 Td
+(  - **Supabase JS client:** Storage upload, download, and signed URL generation.) Tj
+0 -13 Td
+(  - **dotenv:** Environment configuration.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Important backend files:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `backend/src/server.js`: Starts the backend and cleanup job.) Tj
+0 -13 Td
+(  - `backend/src/app.js`: Express app, CORS, JSON parsing, health route, API routes, error) Tj
+0 -13 Td
+(    handling.) Tj
+0 -13 Td
+(  - `backend/src/config/env.js`: Loads root `.env` and `backend/.env`.) Tj
+0 -13 Td
+(  - `backend/src/db/pool.js`: PostgreSQL connection pool.) Tj
+0 -13 Td
+(  - `backend/src/routes`: API route definitions and request validation.) Tj
+0 -13 Td
+(  - `backend/src/controllers`: Request handlers for auth, users, applicants, applications, and) Tj
+0 -13 Td
+(    passports.) Tj
+0 -13 Td
+(  - `backend/src/services`: Email, Supabase storage, AI runner, verification services, audit) Tj
+0 -13 Td
+(    logs, cleanup job.) Tj
+0 -13 Td
+(  - `backend/sql`: Schema, seed file, and migrations.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(5. DATABASE AND STORAGE) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The database is PostgreSQL hosted on Supabase. Core tables include:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `users`: Login accounts, roles, account identity data, verification status, profile photo) Tj
+0 -13 Td
+(    path, member ID.) Tj
+0 -13 Td
+(  - `applicants`: Applicant profile records linked to users.) Tj
+0 -13 Td
+(  - `account_verifications`: Account verification review records with AV code, AI extracted) Tj
+0 -13 Td
+(    data, status, warnings, failures, extracted image paths.) Tj
+0 -13 Td
+(  - `user_verification_files`: Uploaded national ID front/back and selfie files.) Tj
+0 -13 Td
+(  - `passport_applications`: Passport application records, application references, application) Tj
+0 -13 Td
+(    type, passport details, AI extracted passport data.) Tj
+0 -13 Td
+(  - `documents`: Uploaded application documents.) Tj
+0 -13 Td
+(  - `passport_records`: Issued passport records.) Tj
+0 -13 Td
+(  - `audit_logs`: Staff/admin and system activity trail.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Supabase Storage buckets:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `account-verification`: National ID, selfie, extracted ID face, extracted ID signature.) Tj
+0 -13 Td
+(  - `profile-photos`: User profile photos.) Tj
+0 -13 Td
+(  - `application-documents`: Photo ID, old passport, optional replacement documents, extracted) Tj
+0 -13 Td
+(    passport photo, extracted passport signature.) Tj
+0 -13 Td
+() Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 2 of 9) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2627 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(6. AUTHENTICATION AND ROLES) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The system uses JWT bearer tokens. The backend reads the current user from the database on every) Tj
+0 -13 Td
+(authenticated request, so role or verification-status changes take effect without requiring a) Tj
+0 -13 Td
+(new token.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Roles:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - **Applicant:** Can register, verify email, upload account verification files, edit allowed) Tj
+0 -13 Td
+(    account details, and submit passport applications after verification.) Tj
+0 -13 Td
+(  - **Officer:** Can access Operations to review account verification and passport applications.) Tj
+0 -13 Td
+(  - **Admin:** Can access Operations and Management, create staff accounts, revoke staff access,) Tj
+0 -13 Td
+(    delete staff accounts, and edit member data in support cases.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(7. REGISTRATION AND EMAIL VERIFICATION) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Applicants register through `/register`. Required data includes identity details, civil record) Tj
+0 -13 Td
+(details, contact details, password, national ID number, governorate, blood type, marital status,) Tj
+0 -13 Td
+(registry number, and place of birth.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(After registration:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(1. The backend creates the applicant user.) Tj
+0 -13 Td
+(2. The password is hashed.) Tj
+0 -13 Td
+(3. A verification code is generated.) Tj
+0 -13 Td
+(4. An email is sent through SMTP.) Tj
+0 -13 Td
+(5. The user must verify the email before account verification upload is allowed.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The email verification page does not allow the user to edit the registered email field.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(8. UNVERIFIED ACCOUNT CLEANUP) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The backend starts an unverified-account cleanup job when the server starts. Its configuration) Tj
+0 -13 Td
+(is controlled by:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `UNVERIFIED_ACCOUNT_TTL_MINUTES`) Tj
+0 -13 Td
+(  - `UNVERIFIED_ACCOUNT_REMINDER_LEAD_MINUTES`) Tj
+0 -13 Td
+(  - `UNVERIFIED_ACCOUNT_CLEANUP_INTERVAL_MS`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The intended production behavior is account deletion after one week if the account remains) Tj
+0 -13 Td
+(unverified. The system can also send reminder emails before deletion.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(9. ACCOUNT VERIFICATION WORKFLOW) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Account verification happens after registration and email verification.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Applicant uploads:) Tj
+0 -13 Td
+() Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 3 of 9) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2255 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(  - National ID front.) Tj
+0 -13 Td
+(  - National ID back.) Tj
+0 -13 Td
+(  - Selfie photo.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The backend stores the files in Supabase and creates an account verification record with a code) Tj
+0 -13 Td
+(like `AV-2026-000001`.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Python account verification script:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - File: `backend/ai/account_verification_ai.py`) Tj
+0 -13 Td
+(  - Extracts Arabic ID fields and translates/normalizes them.) Tj
+0 -13 Td
+(  - Extracts ID face crop.) Tj
+0 -13 Td
+(  - Extracts ID signature crop.) Tj
+0 -13 Td
+(  - Compares selfie face to ID face.) Tj
+0 -13 Td
+(  - Compares extracted fields against saved user data.) Tj
+0 -13 Td
+(  - Returns status, score, warnings, failures, extracted fields, raw OCR text, and extracted) Tj
+0 -13 Td
+(    image assets.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The account review is not immediately rejected when some fields are missing or slightly) Tj
+0 -13 Td
+(mismatched. Missing or suspicious values are placed under staff review. Clean matches can be) Tj
+0 -13 Td
+(marked verified.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Operations Account Document Review displays:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - AV code.) Tj
+0 -13 Td
+(  - Applicant name.) Tj
+0 -13 Td
+(  - Status.) Tj
+0 -13 Td
+(  - Submitted date.) Tj
+0 -13 Td
+(  - Uploaded national ID front/back/selfie.) Tj
+0 -13 Td
+(  - Extracted ID face.) Tj
+0 -13 Td
+(  - Extracted ID signature.) Tj
+0 -13 Td
+(  - User-provided data vs extracted data table.) Tj
+0 -13 Td
+(  - Green check or red X per field.) Tj
+0 -13 Td
+(  - Staff accept/reject buttons and notes.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(10. PASSPORT APPLICATION WORKFLOW) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Only verified applicants can access the passport application page.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Application types:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - First-time application.) Tj
+0 -13 Td
+(  - Renewal application.) Tj
+0 -13 Td
+(  - Renewal due to lost passport.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Passport duration:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - 5 year passport.) Tj
+0 -13 Td
+(  - 10 year passport.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Applicants under 18 can only choose the 5 year passport option.) Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 4 of 9) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2514 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+() Tj
+0 -13 Td
+(For first-time and lost-passport renewal:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - The passport/registry section is shown as **Registry Details**.) Tj
+0 -13 Td
+(  - Only `Registry Number` is required in that section.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(For standard renewal:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - The section is shown as **Passport and Registry Details**.) Tj
+0 -13 Td
+(  - Passport number, CAN, registry place, registry number, profession, issuance date, and expiry) Tj
+0 -13 Td
+(    date are required.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Required documents:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Photo ID is required for all application types.) Tj
+0 -13 Td
+(  - Old passport is required only for standard renewal.) Tj
+0 -13 Td
+(  - Replacement document is optional for lost-passport renewal.) Tj
+0 -13 Td
+(  - National ID upload is not required in the passport application because it was already) Tj
+0 -13 Td
+(    provided during account verification.) Tj
+0 -13 Td
+(  - Passport application form upload is not required because the user is filling out the) Tj
+0 -13 Td
+(    application inside the system.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(11. PASSPORT APPLICATION PYTHON OCR) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Passport application OCR is separated from account verification.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(File:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `backend/ai/passport_application_ai.py`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(This script:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Reads uploaded old passport image when present.) Tj
+0 -13 Td
+(  - Crops fixed passport regions based on the marked passport layout.) Tj
+0 -13 Td
+(  - Extracts passport fields using Tesseract OCR.) Tj
+0 -13 Td
+(  - Keeps extracted passport photo and passport signature crops.) Tj
+0 -13 Td
+(  - Compares the submitted photo ID face against the verified national ID face.) Tj
+0 -13 Td
+(  - Compares passport signature against verified national ID signature.) Tj
+0 -13 Td
+(  - Compares OCR extracted passport data against form data and saved account data.) Tj
+0 -13 Td
+(  - Returns extracted values, warnings, failures, score, and extracted assets.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Extracted passport fields include:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Mother name.) Tj
+0 -13 Td
+(  - Registry place and number.) Tj
+0 -13 Td
+(  - Profession.) Tj
+0 -13 Td
+(  - Passport photo.) Tj
+0 -13 Td
+(  - Signature.) Tj
+0 -13 Td
+(  - Last name.) Tj
+0 -13 Td
+(  - Passport number.) Tj
+0 -13 Td
+(  - CAN.) Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 5 of 9) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 1850 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(  - First name.) Tj
+0 -13 Td
+(  - Father name.) Tj
+0 -13 Td
+(  - Nationality.) Tj
+0 -13 Td
+(  - Place of birth.) Tj
+0 -13 Td
+(  - Issuance date.) Tj
+0 -13 Td
+(  - Expiry date.) Tj
+0 -13 Td
+(  - Date of birth.) Tj
+0 -13 Td
+(  - Gender.) Tj
+0 -13 Td
+(  - MRZ text.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(12. OPERATIONS DASHBOARD) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Operations is available to admin and officer accounts. It has two separated work areas:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(1. Account Verification.) Tj
+0 -13 Td
+(2. Passport Application Review.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Account Verification supports:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Status filter.) Tj
+0 -13 Td
+(  - AV code search.) Tj
+0 -13 Td
+(  - Queue table.) Tj
+0 -13 Td
+(  - Detail panel.) Tj
+0 -13 Td
+(  - Image modal preview.) Tj
+0 -13 Td
+(  - Field comparison table.) Tj
+0 -13 Td
+(  - Staff accept/reject decisions.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Passport Application Review supports:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Application reference search with `PS-APP-` prefix.) Tj
+0 -13 Td
+(  - Status filter.) Tj
+0 -13 Td
+(  - Queue table.) Tj
+0 -13 Td
+(  - Detail panel.) Tj
+0 -13 Td
+(  - Uploaded document preview.) Tj
+0 -13 Td
+(  - OCR comparison table.) Tj
+0 -13 Td
+(  - Extracted passport photo/signature previews.) Tj
+0 -13 Td
+(  - AI verification action.) Tj
+0 -13 Td
+(  - Cancellation action.) Tj
+0 -13 Td
+(  - Passport issuance fields at the end of the detail panel.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(13. MANAGEMENT DASHBOARD) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Management is admin-only.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Features:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Create staff accounts.) Tj
+0 -13 Td
+(  - View staff account list.) Tj
+0 -13 Td
+(  - Revoke staff access.) Tj
+0 -13 Td
+(  - Delete staff accounts.) Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 6 of 9) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 1959 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(  - Look up applicants by `PS-MEM-` member ID.) Tj
+0 -13 Td
+(  - Edit member support fields when a user made a registration mistake.) Tj
+0 -13 Td
+(  - Delete member accounts when necessary.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Normal members cannot edit protected fields such as national ID number, registry number, or) Tj
+0 -13 Td
+(blood type from My Account. Admin can update those fields through member lookup.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(14. EMAIL SYSTEM) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Nodemailer sends:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Email verification codes.) Tj
+0 -13 Td
+(  - Resend verification emails.) Tj
+0 -13 Td
+(  - Password reset emails.) Tj
+0 -13 Td
+(  - Password changed notification.) Tj
+0 -13 Td
+(  - Account verification submitted email.) Tj
+0 -13 Td
+(  - Account verification completed or review-required emails.) Tj
+0 -13 Td
+(  - Account verification failed/retry emails.) Tj
+0 -13 Td
+(  - Application cancellation emails.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Email branding uses `EMAIL_EMBLEM_URL`.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(15. ASSETS) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Static branding assets are hosted externally through GitHub Pages:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - Passport Security logo.) Tj
+0 -13 Td
+(  - Email transparent logo.) Tj
+0 -13 Td
+(  - Favicon PNG.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(This keeps the app repository lighter and lets email logo URLs use public HTTPS paths.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(16. IMPORTANT ENVIRONMENT VARIABLES) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Database:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `DATABASE_URL`) Tj
+0 -13 Td
+(  - `PGSSLMODE`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Backend/security:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `PORT`) Tj
+0 -13 Td
+(  - `JWT_SECRET`) Tj
+0 -13 Td
+(  - `JWT_EXPIRES_IN`) Tj
+0 -13 Td
+(  - `CORS_ORIGIN`) Tj
+0 -13 Td
+(  - `APP_BASE_URL`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Supabase:) Tj
+0 -13 Td
+() Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 7 of 9) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 1665 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+(  - `SUPABASE_URL`) Tj
+0 -13 Td
+(  - `SUPABASE_SERVICE_ROLE_KEY`) Tj
+0 -13 Td
+(  - `SUPABASE_ACCOUNT_VERIFICATION_BUCKET`) Tj
+0 -13 Td
+(  - `SUPABASE_PROFILE_PHOTOS_BUCKET`) Tj
+0 -13 Td
+(  - `SUPABASE_APPLICATION_DOCUMENTS_BUCKET`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Email:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `SMTP_HOST`) Tj
+0 -13 Td
+(  - `SMTP_PORT`) Tj
+0 -13 Td
+(  - `SMTP_SECURE`) Tj
+0 -13 Td
+(  - `SMTP_USER`) Tj
+0 -13 Td
+(  - `SMTP_PASS`) Tj
+0 -13 Td
+(  - `MAIL_FROM`) Tj
+0 -13 Td
+(  - `EMAIL_EMBLEM_URL`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(AI/OCR:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `AI_PYTHON_COMMAND`) Tj
+0 -13 Td
+(  - `GEMINI_API_KEY`) Tj
+0 -13 Td
+(  - `GEMINI_MODEL`) Tj
+0 -13 Td
+(  - `GEMINI_ACCOUNT_OCR_MODEL`) Tj
+0 -13 Td
+(  - `GEMINI_ACCOUNT_VERIFICATION_MODEL`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Cleanup:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - `UNVERIFIED_ACCOUNT_TTL_MINUTES`) Tj
+0 -13 Td
+(  - `UNVERIFIED_ACCOUNT_REMINDER_LEAD_MINUTES`) Tj
+0 -13 Td
+(  - `UNVERIFIED_ACCOUNT_CLEANUP_INTERVAL_MS`) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(17. RUNNING THE PROJECT) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Frontend:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(npm install) Tj
+0 -13 Td
+(npm run dev) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Backend:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(cd backend) Tj
+0 -13 Td
+(npm install) Tj
+0 -13 Td
+(npm run dev) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Python OCR:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(cd backend) Tj
+0 -13 Td
+(python -m venv .venv) Tj
+0 -13 Td
+(.\\.venv\\Scripts\\Activate.ps1) Tj
+0 -13 Td
+(pip install -r ai\\requirements.txt) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Tesseract OCR must be installed separately and available on PATH.) Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 8 of 9) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 1530 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+() Tj
+0 -13 Td
+(18. VERIFICATION AND REVIEW PHILOSOPHY) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The system uses AI/OCR as a decision-support tool. It extracts fields, highlights mismatches,) Tj
+0 -13 Td
+(and calculates comparison indicators. Staff still have final control in review cases. The system) Tj
+0 -13 Td
+(avoids automatic rejection when OCR data is incomplete or uncertain; it sends questionable) Tj
+0 -13 Td
+(records to staff review.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(19. CURRENT LIMITATIONS) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(  - OCR accuracy depends on image quality, lighting, rotation, and document crop.) Tj
+0 -13 Td
+(  - Tesseract must be installed correctly on the hosting machine.) Tj
+0 -13 Td
+(  - Face and signature matching use local computer-vision heuristics, not a dedicated biometric-) Tj
+0 -13 Td
+(    grade model.) Tj
+0 -13 Td
+(  - Gemini can improve account ID extraction when configured, but local OCR remains important.) Tj
+0 -13 Td
+(  - Passport OCR regions are based on the current passport layout and may need adjustment for) Tj
+0 -13 Td
+(    different document layouts.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(20. PROJECT OUTCOME) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(The project demonstrates a complete passport-service workflow with frontend forms, backend APIs,) Tj
+0 -13 Td
+(database persistence, file uploads, staff review, admin management, email notifications, and AI-) Tj
+0 -13 Td
+(assisted document verification.) Tj
+ET
+BT
+/F1 8 Tf
+512 30 Td
+(Page 9 of 9) Tj
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R] /Count 9 >>
+endobj
+21 0 obj
+<< /Type /Catalog /Pages 20 0 R >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000003273 00000 n 
+0000003400 00000 n 
+0000006524 00000 n 
+0000006651 00000 n 
+0000009330 00000 n 
+0000009457 00000 n 
+0000011764 00000 n 
+0000011891 00000 n 
+0000014458 00000 n 
+0000014587 00000 n 
+0000016490 00000 n 
+0000016619 00000 n 
+0000018631 00000 n 
+0000018760 00000 n 
+0000020478 00000 n 
+0000020607 00000 n 
+0000022190 00000 n 
+0000022319 00000 n 
+0000022430 00000 n 
+trailer
+<< /Size 22 /Root 21 0 R >>
+startxref
+22481
+%%EOF

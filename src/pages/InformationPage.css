@@ -1,0 +1,19 @@
+.ps-information-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ps-primary);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.ps-information-back-link span {
+  font-size: 1.12rem;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.ps-information-back-link:hover,
+.ps-information-back-link:focus {
+  color: var(--ps-primary-dark);
+}

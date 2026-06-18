@@ -1,0 +1,597 @@
+.ps-operations-page {
+  background-color: var(--ps-light);
+}
+
+.ps-operations-page .container {
+  max-width: min(1440px, calc(100vw - 2rem));
+}
+
+.ps-operations-shell {
+  border: 1px solid var(--ps-border);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 10px 30px rgba(26, 58, 92, 0.08);
+}
+
+.ps-operations-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #dbe5ef;
+}
+
+.ps-operations-kicker,
+.ps-workspace-label {
+  margin: 0 0 0.25rem;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.ps-operations-title {
+  color: var(--ps-primary);
+  margin: 0;
+  font-weight: 800;
+}
+
+.ps-operations-hero p:not(.ps-operations-kicker) {
+  max-width: 56rem;
+  margin: 0.5rem 0 0;
+  color: #64748b;
+}
+
+.ps-operations-hero-meta {
+  display: grid;
+  min-width: 13rem;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  align-items: baseline;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 0.85rem 1rem;
+}
+
+.ps-operations-hero-meta span {
+  color: #1a3a5c;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.ps-operations-hero-meta small {
+  color: #64748b;
+}
+
+.ps-operations-panel {
+  background: #f8fafc;
+  border: 1px solid var(--ps-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.ps-operations-workspace {
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.ps-operations-workspace + .ps-operations-workspace {
+  margin-top: 1.5rem;
+}
+
+.ps-workspace-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dbe5ef;
+}
+
+.ps-workspace-heading h2 {
+  color: #1a3a5c;
+  font-weight: 800;
+}
+
+.ps-passport-review-section .ps-workspace-heading {
+  margin-bottom: 1rem;
+}
+
+.ps-account-review-filter {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) auto;
+  align-items: end;
+  gap: 0.65rem;
+}
+
+.ps-account-review-filter .btn {
+  min-height: 38px;
+}
+
+.ps-account-review-layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.5fr);
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.ps-account-review-queue,
+.ps-account-review-main {
+  min-width: 0;
+}
+
+.ps-operations-table tbody tr {
+  cursor: pointer;
+}
+
+.ps-operations-table tbody tr td,
+.ps-operations-table thead th {
+  white-space: nowrap;
+}
+
+.ps-account-review-table tbody tr td,
+.ps-account-review-table thead th,
+.ps-account-review-comparison tbody tr td,
+.ps-account-review-comparison thead th {
+  white-space: normal;
+}
+
+.ps-account-review-table th,
+.ps-account-review-table td {
+  font-size: 0.9rem;
+}
+
+.ps-account-review-table td:nth-child(2) {
+  min-width: 10rem;
+}
+
+.ps-selected-row > td {
+  background-color: rgba(26, 58, 92, 0.08) !important;
+}
+
+.ps-face-score-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  border: 1px solid #c7d7ea;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #1a3a5c;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.ps-document-preview-link {
+  display: grid;
+  gap: 0.15rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  text-align: left;
+}
+
+.ps-document-preview-link strong {
+  color: #1a3a5c;
+}
+
+.ps-document-preview-link:hover strong {
+  text-decoration: underline;
+}
+
+.ps-operations-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.48rem 0.6rem;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.08);
+}
+
+.ps-operations-meta-row span {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ps-operations-meta-row strong {
+  color: #1f2937;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.ps-operations-meta-row:last-child {
+  border-bottom: 0;
+}
+
+.ps-operations-document-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ps-operations-document-list li {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.08);
+}
+
+.ps-operations-document-list li:last-child {
+  border-bottom: 0;
+}
+
+.ps-operations-document-list span,
+.ps-operations-document-list small {
+  color: var(--ps-text-light);
+}
+
+.ps-account-review-detail {
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.ps-review-notice {
+  border: 1px solid rgba(180, 35, 24, 0.18);
+  border-left: 4px solid #b42318;
+  border-radius: 8px;
+  background: #fff7f6;
+  color: #7a271a;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ps-review-raw-arabic {
+  margin-top: 0.2rem;
+  color: #64748b;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.ps-review-source {
+  margin-top: 0.18rem;
+  color: #64748b;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.ps-face-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #1a3a5c;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.ps-account-review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ps-account-review-actions .btn {
+  min-width: 7.5rem;
+  min-height: 2.65rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.ps-account-review-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ps-account-review-image {
+  display: flex;
+  width: 100%;
+  min-height: 8.75rem;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 0;
+  text-decoration: none;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ps-account-review-image-link:hover {
+  border-color: #1a3a5c;
+  box-shadow: 0 8px 20px rgba(26, 58, 92, 0.12);
+}
+
+.ps-account-review-image img {
+  width: 100%;
+  height: clamp(6.25rem, 9vw, 8rem);
+  object-fit: contain;
+  background: #eef3f8;
+}
+
+.ps-account-review-image span {
+  padding: 0.55rem 0.7rem;
+  color: #1a3a5c;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.ps-account-review-comparison {
+  table-layout: fixed;
+}
+
+.ps-account-review-comparison th,
+.ps-account-review-comparison td {
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.ps-account-review-comparison th:last-child,
+.ps-account-review-comparison td:last-child {
+  width: 4.5rem;
+}
+
+.ps-review-match {
+  display: inline-flex;
+  width: 1.65rem;
+  height: 1.65rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ps-review-match-ok {
+  color: #0f7a3b;
+  background: rgba(15, 122, 59, 0.1);
+}
+
+.ps-review-match-bad {
+  color: #b42318;
+  background: rgba(180, 35, 24, 0.1);
+}
+
+.ps-application-details-panel {
+  background: #ffffff;
+}
+
+.ps-passport-review-section .ps-operations-panel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.ps-passport-review-section .ps-application-details-panel {
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.ps-passport-review-section .ps-account-review-queue > .ps-operations-panel {
+  margin-bottom: 0 !important;
+}
+
+.ps-passport-review-section .ps-account-review-queue > .ps-operations-panel + .ps-operations-panel {
+  display: block;
+  margin-top: 1rem;
+}
+
+.ps-application-review-summary {
+  color: #1a3a5c;
+}
+
+.ps-passport-review-section .ps-account-review-image-grid {
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 10rem));
+  justify-content: start;
+}
+
+.ps-passport-review-section .ps-account-review-image {
+  min-height: 7.5rem;
+}
+
+.ps-passport-review-section .ps-account-review-image img {
+  height: 5.75rem;
+}
+
+.ps-application-details-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid #dbe5ef;
+}
+
+.ps-application-summary-card,
+.ps-application-detail-section {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ps-application-summary-card {
+  overflow: hidden;
+}
+
+.ps-application-detail-section {
+  padding: 0.8rem;
+}
+
+.ps-application-detail-section h3,
+.ps-application-details-heading h2 {
+  color: #1a3a5c;
+  font-weight: 800;
+}
+
+.ps-application-ai-notes {
+  margin: 0;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2937;
+  padding: 0.85rem;
+  font-family: inherit;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.ps-application-summary-card .card-body {
+  padding: 0.75rem;
+}
+
+.ps-application-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 0.75rem;
+}
+
+.ps-application-meta-grid .ps-operations-meta-row {
+  min-width: 0;
+  border: 1px solid rgba(26, 58, 92, 0.08);
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.ps-image-preview-modal .modal-content {
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ps-image-preview-modal .modal-body {
+  display: flex;
+  min-height: 60vh;
+  align-items: center;
+  justify-content: center;
+  background: #eef3f8;
+  padding: 1rem;
+}
+
+.ps-image-preview-modal-image {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .ps-operations-page .container {
+    max-width: calc(100vw - 1rem);
+  }
+
+  .ps-operations-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-operations-hero-meta {
+    width: 100%;
+  }
+
+  .ps-workspace-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ps-account-review-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-operations-table tbody tr td,
+  .ps-operations-table thead th {
+    white-space: normal;
+  }
+
+  .ps-operations-meta-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ps-operations-meta-row strong {
+    text-align: left;
+  }
+
+  .ps-application-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ps-operations-page {
+    font-size: 0.95rem;
+  }
+
+  .ps-operations-page .container {
+    max-width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .ps-operations-shell {
+    padding: 1rem !important;
+  }
+
+  .ps-operations-panel {
+    padding: 1rem;
+  }
+
+  .ps-account-review-filter {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-account-review-filter .btn {
+    width: 100%;
+  }
+
+  .ps-account-review-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ps-account-review-actions .btn {
+    min-width: 0;
+  }
+
+  .ps-account-review-image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .ps-account-review-image {
+    min-height: 8rem;
+  }
+
+  .ps-account-review-image img {
+    height: 5.75rem;
+  }
+
+  .ps-account-review-image span {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.76rem;
+  }
+
+  .ps-account-review-comparison {
+    min-width: 36rem;
+  }
+}

@@ -1,0 +1,48 @@
+:root {
+  /* Passport Security theme colors */
+  --ps-primary: #1a3a5c;
+  --ps-primary-dark: #0f2438;
+  --ps-secondary: #2c5282;
+  --ps-accent: #c9a227;
+  --ps-light: #f0f4f8;
+  --ps-white: #ffffff;
+  --ps-text: #2d3748;
+  --ps-text-light: #718096;
+  --ps-border: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ps-text);
+  line-height: 1.6;
+  background-color: var(--ps-light);
+}
+
+.ps-page-shell {
+  background-color: var(--ps-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ps-primary);
+  font-weight: 600;
+}
+
+a {
+  color: var(--ps-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ps-primary);
+}
+
+/* Arabic font support */
+[lang="ar"] {
+  font-family: 'Noto Sans Arabic', 'Source Sans 3', sans-serif;
+}

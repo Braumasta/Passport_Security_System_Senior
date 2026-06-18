@@ -1,0 +1,185 @@
+.ps-management-page {
+  background: var(--ps-light);
+}
+
+.ps-management-page .container {
+  max-width: min(1320px, calc(100vw - 2rem));
+}
+
+.ps-management-shell {
+  border: 1px solid var(--ps-border);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 10px 30px rgba(26, 58, 92, 0.08);
+}
+
+.ps-management-heading,
+.ps-management-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ps-management-heading {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dbe5ef;
+}
+
+.ps-management-heading h1,
+.ps-management-card h2 {
+  margin: 0;
+  color: #1a3a5c;
+  font-weight: 800;
+}
+
+.ps-management-heading p,
+.ps-management-card-heading p {
+  margin: 0.25rem 0 0;
+  color: #64748b;
+}
+
+.ps-management-card {
+  height: 100%;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.ps-management-card .card-body {
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.ps-management-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.ps-management-table {
+  margin-top: 1rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.ps-management-table th {
+  color: #1a3a5c;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.ps-management-table td span {
+  display: block;
+  color: #64748b;
+  font-size: 0.84rem;
+}
+
+.ps-management-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.ps-member-code-form {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.ps-member-lookup-result {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #dbe5ef;
+}
+
+.ps-member-lookup-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ps-member-lookup-summary div {
+  padding: 0.85rem 1rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.ps-member-lookup-summary span {
+  display: block;
+  color: #64748b;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.ps-member-lookup-summary strong {
+  color: #1a3a5c;
+}
+
+.ps-member-detail-table th {
+  width: 18%;
+  color: #1a3a5c;
+  background: #f8fafc;
+}
+
+.ps-member-data-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.ps-member-data-form h3 {
+  margin: 0 0 1rem;
+  color: #1a3a5c;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.ps-member-data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ps-member-lookup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .ps-management-heading,
+  .ps-management-card-heading {
+    flex-direction: column;
+  }
+
+  .ps-management-actions {
+    flex-direction: column;
+  }
+
+  .ps-management-actions .btn {
+    width: 100%;
+  }
+
+  .ps-member-code-form,
+  .ps-member-lookup-summary,
+  .ps-member-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ps-member-code-form .btn,
+  .ps-member-lookup-actions .btn {
+    width: 100%;
+  }
+}

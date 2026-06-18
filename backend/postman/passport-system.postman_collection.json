@@ -1,0 +1,485 @@
+{
+  "info": {
+    "name": "Passport Security System Backend",
+    "_postman_id": "d68ec3d3-b337-4eb1-a6a0-7b95f5560001",
+    "description": "Sample requests for the university passport system backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register Applicant Account",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "first_name",
+                  "value": "Maya",
+                  "type": "text"
+                },
+                {
+                  "key": "middle_name",
+                  "value": "Nabil",
+                  "type": "text"
+                },
+                {
+                  "key": "last_name",
+                  "value": "Salem",
+                  "type": "text"
+                },
+                {
+                  "key": "date_of_birth",
+                  "value": "2000-03-15",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "maya.salem@example.com",
+                  "type": "text"
+                },
+                {
+                  "key": "national_id_number",
+                  "value": "2000000011",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "Secure123!",
+                  "type": "text"
+                },
+                {
+                  "key": "national_id_front",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "national_id_back",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "selfie_photo",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const body = pm.response.json();",
+                  "if (body.data && body.data.token) {",
+                  "  pm.collectionVariables.set('token', body.data.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get Users",
+          "request": {
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Applicants",
+      "item": [
+        {
+          "name": "Create Applicant",
+          "request": {
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Maya\",\n  \"last_name\": \"Salem\",\n  \"father_name\": \"Nabil\",\n  \"mother_name\": \"Lina\",\n  \"date_of_birth\": \"2000-03-15\",\n  \"place_of_birth\": \"Springfield\",\n  \"gender\": \"female\",\n  \"nationality\": \"Applicant\",\n  \"national_id_number\": \"2000000011\",\n  \"phone\": \"+10000000000\",\n  \"email\": \"maya.salem@example.com\",\n  \"address\": \"Not provided\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applicants",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applicants"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Applications",
+      "item": [
+        {
+          "name": "Create Application",
+          "request": {
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicant_id\": 1,\n  \"passport_type\": \"regular\",\n  \"notes\": \"First passport request\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Applications",
+          "request": {
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Application By ID",
+          "request": {
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Application Status",
+          "request": {
+            "method": "PATCH",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"under_review\",\n  \"notes\": \"Documents are being checked\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications/1/status",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "1",
+                "status"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Approve Application",
+          "request": {
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notes\": \"Approved by officer\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications/1/approve",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "1",
+                "approve"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Upload Application Document",
+          "request": {
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "document_type",
+                  "value": "national_id_copy",
+                  "type": "text"
+                },
+                {
+                  "key": "verification_status",
+                  "value": "pending",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications/1/documents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "1",
+                "documents"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Passports",
+      "item": [
+        {
+          "name": "Issue Passport",
+          "request": {
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"application_id\": 1,\n  \"passport_number\": \"RL0000001\",\n  \"issue_date\": \"2026-04-11\",\n  \"expiry_date\": \"2031-04-11\",\n  \"issuing_authority\": \"Passport Security\",\n  \"passport_status\": \"active\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/passports",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "passports"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Passport By ID",
+          "request": {
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/passports/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "passports",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

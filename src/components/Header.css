@@ -1,0 +1,309 @@
+.ps-navbar {
+  background-color: #212529;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.ps-navbar .navbar-brand {
+  margin-right: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 0.65rem;
+}
+
+.ps-brand-text {
+  color: #fff;
+}
+
+.ps-navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+.ps-navbar .nav-link:hover {
+  color: var(--ps-accent) !important;
+}
+
+.ps-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+.ps-sign-in-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.35rem;
+  background-color: var(--ps-primary);
+  color: #fff;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.ps-sign-in-button:hover,
+.ps-sign-in-button:focus {
+  background-color: var(--ps-primary-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
+.ps-account-dropdown .dropdown-toggle::after {
+  display: none;
+}
+
+.ps-account-dropdown .dropdown-toggle {
+  padding: 0.25rem 0 0.25rem 0.75rem !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+}
+
+.ps-profile-trigger {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.ps-profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ps-profile-fallback {
+  font-size: 0.95rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ps-mobile-account-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.ps-mobile-account-avatar .ps-profile-fallback {
+  color: #fff;
+}
+
+.ps-account-dropdown .dropdown-menu {
+  min-width: 14rem;
+}
+
+.ps-account-dropdown {
+  margin-left: 0.5rem;
+}
+
+.ps-account-dropdown .dropdown-item:focus,
+.ps-account-dropdown .dropdown-item:hover,
+.ps-account-dropdown .dropdown-item.active,
+.ps-account-dropdown .dropdown-item:active,
+.ps-navbar .dropdown-menu .dropdown-item:focus,
+.ps-navbar .dropdown-menu .dropdown-item:hover,
+.ps-navbar .dropdown-menu .dropdown-item.active,
+.ps-navbar .dropdown-menu .dropdown-item:active {
+  background-color: var(--ps-light) !important;
+  color: var(--ps-primary) !important;
+}
+
+.ps-account-dropdown .dropdown-item:focus,
+.ps-navbar .dropdown-menu .dropdown-item:focus {
+  box-shadow: none !important;
+}
+
+.ps-navbar .navbar-nav {
+  align-items: center;
+}
+
+.ps-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.ps-navbar .navbar-toggler-icon {
+  filter: invert(1) grayscale(1) brightness(2);
+}
+
+.ps-mobile-account-action {
+  background: transparent;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  color: #fff !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+.ps-mobile-account-action:hover {
+  color: var(--ps-accent) !important;
+}
+
+.ps-mobile-account-summary {
+  border-top: 1px solid rgba(26, 58, 92, 0.1);
+  border-bottom: 1px solid rgba(26, 58, 92, 0.1);
+  margin: 0.25rem 1rem 0.5rem;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+}
+
+@media (max-width: 991.98px) {
+  .ps-navbar .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    row-gap: 0.5rem;
+  }
+
+  .ps-navbar .navbar-brand {
+    margin-right: 0;
+    min-width: 0;
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+
+  .ps-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .ps-navbar .navbar-brand span {
+    font-size: 1rem !important;
+    line-height: 1.2;
+  }
+
+  .ps-navbar .navbar-toggler {
+    justify-self: end;
+    padding: 0.35rem 0.55rem;
+    margin-left: 0.5rem;
+  }
+
+  .ps-navbar .navbar-nav {
+    align-items: stretch;
+  }
+
+  .ps-navbar .navbar-collapse {
+    grid-column: 1 / -1;
+    padding-top: 0.5rem;
+  }
+
+  .ps-main-nav {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+
+  .ps-main-nav .nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+
+  .ps-main-nav .nav > * {
+    min-width: 0;
+  }
+
+  .ps-main-nav .dropdown {
+    width: 100%;
+  }
+
+  .ps-main-nav .dropdown-toggle {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    white-space: normal;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.25;
+    padding: 0.7rem 0.95rem !important;
+    border-radius: 0.45rem;
+  }
+
+  .ps-main-nav .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100%;
+    min-width: 0;
+    margin-top: 0.15rem;
+    border-radius: 0.45rem;
+  }
+
+  .ps-main-nav .dropdown-item {
+    white-space: normal;
+    line-height: 1.35;
+    padding: 0.6rem 0.95rem;
+  }
+
+  .ps-mobile-account-summary {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .ps-mobile-account-summary .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+.ps-main-nav {
+  background-color: var(--ps-primary) !important;
+}
+
+.ps-main-nav .nav-link,
+.ps-main-nav .dropdown-toggle {
+  color: white !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+.ps-main-nav .dropdown-toggle:hover {
+  color: var(--ps-accent) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ps-main-nav .dropdown-menu {
+  border: 1px solid var(--ps-border);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.ps-main-nav .dropdown-item {
+  color: var(--ps-text);
+  padding: 0.4rem 1rem;
+}
+
+.ps-main-nav .dropdown-item:hover {
+  background-color: var(--ps-light);
+  color: var(--ps-primary);
+}
+
+.ps-main-nav .dropdown-item:focus,
+.ps-main-nav .dropdown-item.active,
+.ps-main-nav .dropdown-item:active {
+  background-color: var(--ps-light) !important;
+  color: var(--ps-primary) !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,132 @@
+.ps-register-page {
+  background: var(--ps-light);
+}
+
+.ps-register-card {
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(26, 58, 92, 0.08);
+}
+
+.ps-register-card .card-body {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.ps-register-heading {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dbe5ef;
+}
+
+.ps-register-heading span {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ps-register-heading h1 {
+  margin: 0.25rem 0 0.5rem;
+  color: #1a3a5c;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-weight: 800;
+}
+
+.ps-register-heading p {
+  max-width: 56rem;
+  margin: 0;
+  color: #64748b;
+}
+
+.ps-register-section {
+  padding: 1rem;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.ps-register-section + .ps-register-section {
+  margin-top: 1rem;
+}
+
+.ps-register-section h2 {
+  margin: 0 0 0.9rem;
+  color: #1a3a5c;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.ps-register-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1rem;
+  align-items: start;
+}
+
+.ps-register-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ps-register-submit-button {
+  grid-column: 1 / -1;
+  margin-top: 0.25rem;
+}
+
+.ps-register-section-alert {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.ps-register-section-alert ul {
+  padding-left: 1.1rem;
+}
+
+.ps-register-section .form-label {
+  color: #1f2937;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.ps-register-section .form-control,
+.ps-register-section .form-select,
+.ps-register-section .input-group-text {
+  min-height: 40px;
+  border-color: #ced8e3;
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+.ps-register-section .input-group .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.ps-register-section .input-group .input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #1a3a5c;
+  font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+  .ps-register-card .card-body {
+    padding: 1rem;
+  }
+
+  .ps-register-section {
+    padding: 0.85rem;
+  }
+
+  .ps-register-grid,
+  .ps-register-grid-three {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 576px) {
+  .ps-register-grid-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
