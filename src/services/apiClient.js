@@ -1,4 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+const API_BASE_URL = configuredApiBaseUrl.replace(/\/$/, '').endsWith('/api')
+  ? configuredApiBaseUrl.replace(/\/$/, '')
+  : `${configuredApiBaseUrl.replace(/\/$/, '')}/api`
 const API_ROOT_URL = API_BASE_URL.replace(/\/api\/?$/, '')
 
 const buildHeaders = ({ token, extraHeaders = {}, hasFormData = false }) => {
