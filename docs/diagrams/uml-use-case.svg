@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .bg{fill:#f7fafc}.title{font:700 36px Arial;fill:#12345a}.boundary{fill:#fff;stroke:#1a3a5c;stroke-width:3;rx:20}.actor{stroke:#102a43;stroke-width:3;fill:none}.actorText{font:700 18px Arial;fill:#102a43;text-anchor:middle}.use{fill:#eef7ff;stroke:#5b7c99;stroke-width:2}.useText{font:700 15px Arial;fill:#102a43;text-anchor:middle}.line{stroke:#425a70;stroke-width:2}.include{stroke:#0f8b8d;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#arrow)}.small{font:13px Arial;fill:#0f595b;text-anchor:middle}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0f8b8d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="1000"/>
+  <text class="title" x="60" y="70">Passport Security System - UML Use Case Diagram</text>
+
+  <rect class="boundary" x="285" y="120" width="1030" height="800"/>
+  <text class="title" x="610" y="165" style="font-size:24px">Passport Security System</text>
+
+  <g transform="translate(125 260)">
+    <circle class="actor" cx="0" cy="0" r="28"/>
+    <path class="actor" d="M0 28 L0 105 M-55 58 L55 58 M0 105 L-45 170 M0 105 L45 170"/>
+    <text class="actorText" x="0" y="210">Applicant</text>
+  </g>
+
+  <g transform="translate(125 655)">
+    <circle class="actor" cx="0" cy="0" r="28"/>
+    <path class="actor" d="M0 28 L0 105 M-55 58 L55 58 M0 105 L-45 170 M0 105 L45 170"/>
+    <text class="actorText" x="0" y="210">Staff Officer</text>
+  </g>
+
+  <g transform="translate(1460 500)">
+    <circle class="actor" cx="0" cy="0" r="28"/>
+    <path class="actor" d="M0 28 L0 105 M-55 58 L55 58 M0 105 L-45 170 M0 105 L45 170"/>
+    <text class="actorText" x="0" y="210">Admin</text>
+  </g>
+
+  <g transform="translate(1460 190)">
+    <rect x="-55" y="-45" width="110" height="70" fill="#fff" stroke="#102a43" stroke-width="3" rx="8"/>
+    <text class="actorText" x="0" y="55">External Services</text>
+  </g>
+
+  <ellipse class="use" cx="455" cy="245" rx="120" ry="38"/>
+  <text class="useText" x="455" y="241">Create Account</text>
+  <text class="useText" x="455" y="260">and Verify Email</text>
+
+  <ellipse class="use" cx="700" cy="245" rx="125" ry="38"/>
+  <text class="useText" x="700" y="241">Submit National ID</text>
+  <text class="useText" x="700" y="260">and Selfie</text>
+
+  <ellipse class="use" cx="960" cy="245" rx="135" ry="38"/>
+  <text class="useText" x="960" y="241">Track Account</text>
+  <text class="useText" x="960" y="260">Verification Status</text>
+
+  <ellipse class="use" cx="520" cy="405" rx="130" ry="38"/>
+  <text class="useText" x="520" y="401">Edit Saved</text>
+  <text class="useText" x="520" y="420">Account Details</text>
+
+  <ellipse class="use" cx="780" cy="405" rx="145" ry="38"/>
+  <text class="useText" x="780" y="401">Submit Passport</text>
+  <text class="useText" x="780" y="420">Application</text>
+
+  <ellipse class="use" cx="1045" cy="405" rx="130" ry="38"/>
+  <text class="useText" x="1045" y="401">Upload Required</text>
+  <text class="useText" x="1045" y="420">Documents</text>
+
+  <ellipse class="use" cx="515" cy="610" rx="150" ry="38"/>
+  <text class="useText" x="515" y="606">Review Account</text>
+  <text class="useText" x="515" y="625">Verification Documents</text>
+
+  <ellipse class="use" cx="805" cy="610" rx="150" ry="38"/>
+  <text class="useText" x="805" y="606">Review Passport</text>
+  <text class="useText" x="805" y="625">Applications</text>
+
+  <ellipse class="use" cx="1080" cy="610" rx="130" ry="38"/>
+  <text class="useText" x="1080" y="606">Accept or Reject</text>
+  <text class="useText" x="1080" y="625">Reviews</text>
+
+  <ellipse class="use" cx="545" cy="775" rx="140" ry="38"/>
+  <text class="useText" x="545" y="771">Run AI</text>
+  <text class="useText" x="545" y="790">Verification</text>
+
+  <ellipse class="use" cx="820" cy="775" rx="140" ry="38"/>
+  <text class="useText" x="820" y="771">Send Email</text>
+  <text class="useText" x="820" y="790">Notifications</text>
+
+  <ellipse class="use" cx="1095" cy="775" rx="145" ry="38"/>
+  <text class="useText" x="1095" y="771">Manage Staff and</text>
+  <text class="useText" x="1095" y="790">Member Accounts</text>
+
+  <line class="line" x1="180" y1="260" x2="340" y2="245"/>
+  <line class="line" x1="180" y1="260" x2="575" y2="245"/>
+  <line class="line" x1="180" y1="260" x2="825" y2="245"/>
+  <line class="line" x1="180" y1="295" x2="390" y2="405"/>
+  <line class="line" x1="180" y1="315" x2="635" y2="405"/>
+  <line class="line" x1="180" y1="325" x2="915" y2="405"/>
+
+  <line class="line" x1="180" y1="655" x2="365" y2="610"/>
+  <line class="line" x1="180" y1="655" x2="655" y2="610"/>
+  <line class="line" x1="180" y1="655" x2="950" y2="610"/>
+
+  <line class="line" x1="1405" y1="515" x2="1210" y2="775"/>
+  <line class="line" x1="1405" y1="520" x2="1210" y2="610"/>
+
+  <line class="line" x1="1405" y1="190" x2="680" y2="775"/>
+  <line class="line" x1="1405" y1="205" x2="930" y2="775"/>
+
+  <path class="include" d="M780 443 C750 520 650 690 545 737"/>
+  <text class="small" x="665" y="635">&lt;&lt;include&gt;&gt;</text>
+  <path class="include" d="M805 648 C780 700 720 742 685 760"/>
+  <text class="small" x="744" y="706">&lt;&lt;include&gt;&gt;</text>
+  <path class="include" d="M1080 648 C1035 715 925 755 820 770"/>
+  <text class="small" x="980" y="720">&lt;&lt;include&gt;&gt;</text>
+</svg>
