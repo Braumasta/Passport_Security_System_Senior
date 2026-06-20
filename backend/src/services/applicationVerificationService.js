@@ -699,11 +699,9 @@ export const applicationVerificationService = {
               field: 'national_id_number',
               label: 'National ID Number',
               expected: application.applicant_national_id_number,
-              actual:
-                extractedPassportData.national_id_number ||
-                getExtractedValue(nationalIdData, ['national_id_number', 'nationalIdNumber', 'id_number', 'idNumber']),
+              actual: getExtractedValue(nationalIdData, ['national_id_number', 'nationalIdNumber', 'id_number', 'idNumber']),
               expectedSource: 'User Provided',
-              actualSource: extractedPassportData.national_id_number ? 'Passport OCR' : 'National ID Data',
+              actualSource: 'Latest ID Verification',
               type: 'digits',
             }),
             buildComparisonRow({

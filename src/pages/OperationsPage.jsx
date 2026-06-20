@@ -236,6 +236,19 @@ const getPassportComparisonRows = (application) => {
   if (Array.isArray(rows) && rows.length) {
     return rows.map((row) => ({
       ...row,
+      ...(row.field === 'national_id_number'
+        ? {
+            actual:
+              application?.ai_extracted_data?._national_id_data?.national_id_number ||
+              application?.ai_extracted_data?._national_id_data?.nationalIdNumber ||
+              application?.ai_extracted_data?._national_id_data?.id_number ||
+              application?.ai_extracted_data?._national_id_data?.idNumber ||
+              row.actual,
+            actual_source: 'Latest ID Verification',
+          }
+        : {}),
+    })).map((row) => ({
+      ...row,
       match: row.match || reviewValuesMatch(row.expected, row.actual, row.field),
     }))
   }
