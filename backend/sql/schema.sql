@@ -149,6 +149,25 @@ CREATE TABLE IF NOT EXISTS audit_logs (
   details JSONB NOT NULL DEFAULT '{}'::jsonb
 );
 
+CREATE OR REPLACE FUNCTION delete_linked_applicant_after_user_delete()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF OLD.applicant_id IS NOT NULL THEN
+    DELETE FROM applicants
+    WHERE applicant_id = OLD.applicant_id;
+  END IF;
+
+  RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trg_delete_linked_applicant_after_user_delete ON users;
+
+CREATE TRIGGER trg_delete_linked_applicant_after_user_delete
+AFTER DELETE ON users
+FOR EACH ROW
+EXECUTE FUNCTION delete_linked_applicant_after_user_delete();
+
 CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
 CREATE INDEX IF NOT EXISTS idx_users_verification_status ON users(verification_status);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_users_member_id_unique
